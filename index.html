@@ -1,7 +1,7 @@
 <html>
 <head>
 	
-	<title>Quick Start - Leaflet</title>
+	<title>Mapping Minnesota Cities</title>
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,11 +15,11 @@
 
 <body>
 
-<div id="mapid" style="height: 400px;"></div>
+<div id="mapid" style="height: 900px;"></div>
 
 <script>
 
-	var mymap = L.map('mapid').setView([45.586111,-95.913889], 13);
+	var mymap = L.map('mapid').setView([45.586111,-95.913889], 6);
 
 	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
@@ -50,7 +50,10 @@
 		 	{"type":"Feature","properties": {"name":"Fargo SD","show_on_map":true,"popupContent":"Fargo SD"}, "geometry":{"type":"Point","coordinates":[-96.7898,46.8772]}},
 		 	{"type":"Feature","properties": {"name":"Saint Paul MN","show_on_map":true,"popupContent":"Saint Paul MN"}, "geometry":{"type":"Point","coordinates":[-93.17459,44.913815]}},
 		 	{"type":"Feature","properties": {"name":"Roseau MN","show_on_map":true,"popupContent":"Roseau MN"}, "geometry":{"type":"Point","coordinates":[-95.7628,48.8461]}},
-		 	{"type":"Feature","properties": {"name":"Hudson WI","show_on_map":true,"popupContent":"Hudson WI"}, "geometry":{"type":"Point","coordinates":[-92.7569,44.9747]}}
+		 	{"type":"Feature","properties": {"name":"Hudson WI","show_on_map":true,"popupContent":"Hudson WI"}, "geometry":{"type":"Point","coordinates":[-92.7569,44.9747]}},
+		 	{"type":"Feature","properties": {"name":"Morris MN","show_on_map":true,"popupContent":"Morris MN"}, "geometry":{"type":"Point","coordinates":[ -95.9092,45.584124]}},
+		 	{"type":"Feature","properties": {"name":"St Cloud MN","show_on_map":true,"popupContent":"St Cloud MN"}, "geometry":{"type":"Point","coordinates":[-94.1632,45.5579 ]}},
+		 	{"type":"Feature","properties": {"name":"Duluth MN","show_on_map":true,"popupContent":"Duluth MN"}, "geometry":{"type":"Point","coordinates":[-92.1005,46.7867]}}
 		 	]
 	 	function circleConvert(feature, latlng){
 	 		return new L.CircleMarker(latlng, {radius:5, color: '#FF0000'})
@@ -66,7 +69,7 @@
 	 		onEachFeature: onEachFeature
 	 	}
 	 	var cityLayer = L.geoJSON(cities,layerProcessing).addTo(mymap);
-	 	var path = [[44.0121,-92.59604],[47.7504,-90.3343],[44.913815,-93.17459],[48.8461,-95.7628],[46.8772,-96.7898],[43.623255,-95.4802],[44.9747,-92.7569]]
+	 	var path = [[44.0121,-92.59604],[47.7504,-90.3343],[ 45.584124,-95.9092],[44.913815,-93.17459],[48.8461,-95.7628],[46.7867, -92.1005],[46.8772,-96.7898],[43.623255,-95.4802],[44.9747,-92.7569],[45.5579, -94.1632],[44.0121,-92.59604]]
 
 	 	var lineStyle={
 	 		"dashArray": [
